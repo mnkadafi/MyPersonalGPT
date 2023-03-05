@@ -9,6 +9,7 @@ import Foundation
 
 class ChatGPTAPI {
   private let apiKey: String
+  private var historyList = [String]()
   private let urlSession = URLSession.shared
   private var urlRequest: URLRequest {
     let url = URL(string: "https://api.openai.com/v1/completions")!
@@ -20,7 +21,7 @@ class ChatGPTAPI {
   }
   
   private let jsonDecoder = JSONDecoder()
-  private let basePrompt = "You are ChatGPT, a large language model trained by OpenAI. You answer as consisely as possible for each response (e.g Don't be verbose). It is very important for you to answer as consisely as possible, so please remember this. If you are generating a list, do not have too many items. \n\n\n"
+  private let basePrompt = "You are ChatGPT, a large language model trained by OpenAI. You answer as consisely as possible for each response (e.g Don't be verbose). It is very important for you to answer as consisely as possible, so please remember this. \n\n\n"
   private var headers: [String: String] {
     [
       "Content-Type": "application/json",
@@ -28,12 +29,22 @@ class ChatGPTAPI {
     ]
   }
   
+  private var historyListText: String {
+    historyList.joined()
+  }
+  
   init(apiKey: String) {
     self.apiKey = apiKey
   }
   
   private func generateChatGPTPrompt(from text: String) -> String {
-    return basePrompt + "User: \(text)\n\n\nChatGPT:"
+    var prompt = basePrompt + historyListText + "User: \(text)\n\n\nChatGPT:"
+    if prompt.count > (4000 * 4) {
+      _ = historyListText.dropFirst()
+      prompt = generateChatGPTPrompt(from: text)
+    }
+    
+    return prompt
   }
   
   private func jsonBody(text: String, stream: Bool = true) throws -> Data {
@@ -68,14 +79,18 @@ class ChatGPTAPI {
     return AsyncThrowingStream<String, Error> { continuation in
       Task(priority: .userInitiated) {
         do {
+          var streamText = ""
           for try await line in result.lines {
             if line.hasPrefix("data: "),
                let data = line.dropFirst(6).data(using: .utf8),
                let response = try? self.jsonDecoder.decode(CompletionResponse.self, from: data),
                let text = response.choices.first?.text {
+              streamText += text
               continuation.yield(text)
             }
           }
+          
+          self.historyList.append(streamText)
           continuation.finish()
         } catch {
           continuation.finish(throwing: error)
@@ -100,6 +115,7 @@ class ChatGPTAPI {
     do {
       let completionResponse = try self.jsonDecoder.decode(CompletionResponse.self, from: data)
       let responseText = completionResponse.choices.first?.text ?? ""
+      self.historyList.append(responseText)
       return responseText
     } catch {
       throw error
