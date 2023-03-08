@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4B78FD029B678DF003DFFA3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B78FCF29B678DF003DFFA3 /* ViewModel.swift */; };
+		B4B78FD229B6791B003DFFA3 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B78FD129B6791B003DFFA3 /* MessageRow.swift */; };
+		B4B78FD429B67DE2003DFFA3 /* DotLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B78FD329B67DE2003DFFA3 /* DotLoadingView.swift */; };
+		B4B78FD629B67F58003DFFA3 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B78FD529B67F58003DFFA3 /* MessageRowView.swift */; };
 		B4D0E20729B3619E0093809D /* MyPersonalGPTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0E20629B3619E0093809D /* MyPersonalGPTApp.swift */; };
 		B4D0E20929B3619E0093809D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0E20829B3619E0093809D /* ContentView.swift */; };
 		B4D0E20B29B3619F0093809D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D0E20A29B3619F0093809D /* Assets.xcassets */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4B78FCF29B678DF003DFFA3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B4B78FD129B6791B003DFFA3 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
+		B4B78FD329B67DE2003DFFA3 /* DotLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLoadingView.swift; sourceTree = "<group>"; };
+		B4B78FD529B67F58003DFFA3 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
 		B4D0E20329B3619E0093809D /* MyPersonalGPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPersonalGPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D0E20629B3619E0093809D /* MyPersonalGPTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPersonalGPTApp.swift; sourceTree = "<group>"; };
 		B4D0E20829B3619E0093809D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,10 +62,14 @@
 			isa = PBXGroup;
 			children = (
 				B4D0E20629B3619E0093809D /* MyPersonalGPTApp.swift */,
+				B4B78FD329B67DE2003DFFA3 /* DotLoadingView.swift */,
 				B4D0E20829B3619E0093809D /* ContentView.swift */,
+				B4B78FCF29B678DF003DFFA3 /* ViewModel.swift */,
 				B4D0E21429B3620A0093809D /* ChatGPTAPI.swift */,
 				B4D0E20A29B3619F0093809D /* Assets.xcassets */,
 				B4D0E20C29B3619F0093809D /* Preview Content */,
+				B4B78FD129B6791B003DFFA3 /* MessageRow.swift */,
+				B4B78FD529B67F58003DFFA3 /* MessageRowView.swift */,
 			);
 			path = MyPersonalGPT;
 			sourceTree = "<group>";
@@ -142,7 +154,11 @@
 			files = (
 				B4D0E21529B3620A0093809D /* ChatGPTAPI.swift in Sources */,
 				B4D0E20929B3619E0093809D /* ContentView.swift in Sources */,
+				B4B78FD029B678DF003DFFA3 /* ViewModel.swift in Sources */,
+				B4B78FD429B67DE2003DFFA3 /* DotLoadingView.swift in Sources */,
 				B4D0E20729B3619E0093809D /* MyPersonalGPTApp.swift in Sources */,
+				B4B78FD629B67F58003DFFA3 /* MessageRowView.swift in Sources */,
+				B4B78FD229B6791B003DFFA3 /* MessageRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
