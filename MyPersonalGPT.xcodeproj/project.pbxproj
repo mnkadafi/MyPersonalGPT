@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B421841329B98DDB005E1AD9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B421841229B98DDB005E1AD9 /* APIKey.swift */; };
 		B4B78FD029B678DF003DFFA3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B78FCF29B678DF003DFFA3 /* ViewModel.swift */; };
 		B4B78FD229B6791B003DFFA3 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B78FD129B6791B003DFFA3 /* MessageRow.swift */; };
 		B4B78FD429B67DE2003DFFA3 /* DotLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B78FD329B67DE2003DFFA3 /* DotLoadingView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B421841229B98DDB005E1AD9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		B4B78FCF29B678DF003DFFA3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B4B78FD129B6791B003DFFA3 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
 		B4B78FD329B67DE2003DFFA3 /* DotLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLoadingView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				B4D0E20C29B3619F0093809D /* Preview Content */,
 				B4B78FD129B6791B003DFFA3 /* MessageRow.swift */,
 				B4B78FD529B67F58003DFFA3 /* MessageRowView.swift */,
+				B421841229B98DDB005E1AD9 /* APIKey.swift */,
 			);
 			path = MyPersonalGPT;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				B4D0E21529B3620A0093809D /* ChatGPTAPI.swift in Sources */,
 				B4D0E20929B3619E0093809D /* ContentView.swift in Sources */,
+				B421841329B98DDB005E1AD9 /* APIKey.swift in Sources */,
 				B4B78FD029B678DF003DFFA3 /* ViewModel.swift in Sources */,
 				B4B78FD429B67DE2003DFFA3 /* DotLoadingView.swift in Sources */,
 				B4D0E20729B3619E0093809D /* MyPersonalGPTApp.swift in Sources */,
@@ -290,6 +294,7 @@
 				DEVELOPMENT_TEAM = DMH4UQA9W4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyChatGPT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -319,6 +324,7 @@
 				DEVELOPMENT_TEAM = DMH4UQA9W4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyChatGPT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
